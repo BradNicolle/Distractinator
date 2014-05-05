@@ -25,6 +25,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 		final ActionBar actionBar = getActionBar();
 		
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+		// This hides any action bar above tabs
 		actionBar.setDisplayShowHomeEnabled(false);              
 		actionBar.setDisplayShowTitleEnabled(false);
 		
@@ -38,7 +39,8 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
                 actionBar.setSelectedNavigationItem(position);
             }
         });
-
+        
+        // Populate tabs
         for (int i = 0; i < mAppPagerAdapter.getCount(); i++) {
         	ActionBar.Tab tab = actionBar.newTab();
         	tab.setIcon(mAppPagerAdapter.getIcon(i));
